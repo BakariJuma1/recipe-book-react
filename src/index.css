@@ -1,0 +1,149 @@
+/* ------------------ Header ------------------ */
+.header {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.header li {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header li:hover {
+  color: #ffcc00;
+}
+
+.header li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+.header li:hover::after {
+  width: 100%;
+}
+
+/* ------------------ Recipe Grid ------------------ */
+.recipeContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* ------------------ Recipe Cards ------------------ */
+.recipeProfile {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipeProfile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipeProfile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.recipeProfile h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recipeProfile p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.recipeProfile p strong {
+  color: #007bff;
+}
+
+/* ------------------ Footer ------------------ */
+.footer {
+  background-color: #0056b3;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* ------------------ Responsive Tweaks ------------------ */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer {
+    padding: 30px 10px;
+  }
+}
