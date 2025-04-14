@@ -10,6 +10,11 @@ function App() {
   // console.log("Current recipes state:", recipes);
 
   const [recipes, setRecipes] = useState(recipesData);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   function addNewRecipe(newRecipe) {
     setRecipes([...recipes, newRecipe]);
@@ -21,9 +26,9 @@ function App() {
       <Header />
       <main>
         <h1>Recipes</h1>
-        <SearchRecipe />
+        <SearchRecipe onSearch={setSearchTerm} />
         <section className="recipeContainer">
-          <RecipeCard Recipes={recipes} />
+          <RecipeCard Recipes={filteredRecipes} />
         </section>
         <section className="addRecipe">
           <AddRecipe onAdd={addNewRecipe} />
