@@ -1,4 +1,4 @@
-import Recipes from "./Data/Recipe";
+import recipesData from "./Data/Recipe";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import RecipeCard from "./Components/RecipeCard";
@@ -7,23 +7,15 @@ import SearchRecipe from "./Components/SearchRecipe";
 import { useState } from "react";
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
-  const [formData, setFormData] = useState({
-    name: "",
-    ingredients: "",
-    category: "",
-    cookTime: "",
-    instructions: "",
-    image: "",
-  });
+  // console.log("Current recipes state:", recipes);
 
-  function addNewRecipe(e) {
-    e.preventDefault();
-    setRecipes([...recipes, formData]);
-    setFormData({});
+  const [recipes, setRecipes] = useState(recipesData);
+
+  function addNewRecipe(newRecipe) {
+    setRecipes([...recipes, newRecipe]);
   }
 
-  console.log(Recipes); //TESTING
+  console.log(recipesData); //TESTING
   return (
     <>
       <Header />
@@ -31,7 +23,7 @@ function App() {
         <h1>Recipes</h1>
         <SearchRecipe />
         <section className="recipeContainer">
-          <RecipeCard Recipes={Recipes} />
+          <RecipeCard Recipes={recipes} />
         </section>
         <section className="addRecipe">
           <AddRecipe onAdd={addNewRecipe} />

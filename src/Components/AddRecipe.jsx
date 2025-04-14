@@ -2,7 +2,7 @@ import Recipe from "../Data/Recipe";
 import RecipeCard from "./RecipeCard";
 import { useState } from "react";
 
-function AddRecipe(onAdd) {
+function AddRecipe({ onAdd }) {
   const [formData, setFormData] = useState({
     name: "",
     ingredients: "",
