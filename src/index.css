@@ -50,7 +50,30 @@
 .header li:hover::after {
   width: 100%;
 }
+/* SEARCH AREA */
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 10px;
+}
 
+.searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
 /* ------------------ Recipe Grid ------------------ */
 .recipeContainer {
   display: grid;
@@ -100,6 +123,51 @@
   color: #007bff;
 }
 
+/* ADDING RECIPE */
+.myForm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.myForm input[type="text"],
+.myForm input[type="textarea"],
+.myForm input[type="url"],
+.myForm input[type="submit"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.myForm input[type="text"]:focus,
+.myForm input[type="textarea"]:focus,
+.myForm input[type="url"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.myForm input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.myForm input[type="submit"]:hover {
+  background-color: #0056b3;
+}
 /* ------------------ Footer ------------------ */
 .footer {
   background-color: #0056b3;
