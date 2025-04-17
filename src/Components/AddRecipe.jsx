@@ -1,6 +1,6 @@
 import Recipe from "../Data/Recipe";
 import RecipeCard from "./RecipeCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function AddRecipe({ onAdd }) {
   const [formData, setFormData] = useState({
@@ -24,11 +24,16 @@ function AddRecipe({ onAdd }) {
       instructions: "",
       image: "",
     });
+    fetch("http://localhost:3000/recipes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
   }
 
   return (
     <>
-      <h3>Add new Recipe</h3>
+      <h3 style={{ textAlign: "center" }}> Add new Recipe</h3>
       <form action="" className="myForm" onSubmit={handleSubmit}>
         <input
           type="text"

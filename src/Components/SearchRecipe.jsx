@@ -1,4 +1,5 @@
 function SearchRecipe({ onSearch }) {
+  // console.log("Current search term:", searchTerm);
   function handleChange(e) {
     onSearch(e.target.value);
     console.log(e.target.value);
